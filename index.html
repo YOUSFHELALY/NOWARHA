@@ -625,44 +625,6 @@
             color: var(--text-muted);
         }
 
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Centered layout */
-            max-width: 600px;
-            margin: 0 auto;
-            gap: 30px;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            border-radius: 16px;
-            background: var(--dark-glass);
-            border: 1px solid var(--border-glass);
-            transition: var(--transition);
-        }
-
-        .contact-card:hover {
-            border-color: var(--electric-blue);
-            background: rgba(0, 229, 255, 0.05);
-            box-shadow: 0 0 15px var(--electric-blue-glow);
-        }
-
-        .contact-card svg {
-            width: 30px;
-            height: 30px;
-            fill: var(--electric-blue);
-        }
-
         /* ================= SIMULATION GAME (NEW FLEX LAYOUT) ================= */
         .simulation-wrapper {
             display: flex;
@@ -1251,7 +1213,7 @@
         /* ================= RESPONSIVE ================= */
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.8rem; }
-            .hero-grid, .device-grid, .contact-grid { gap: 40px; }
+            .hero-grid, .device-grid { gap: 40px; }
             .app-grid { grid-template-columns: repeat(2, 1fr); }
             .features-grid { grid-template-columns: 1fr; }
             .simulation-wrapper { padding: 30px 20px; gap: 30px; }
@@ -1284,7 +1246,7 @@
             .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
             .mobile-menu-btn.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--electric-blue); }
 
-            .hero-grid, .device-grid, .contact-grid {
+            .hero-grid, .device-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1380,7 +1342,6 @@
                 <a onclick="navigateTo('faq')" data-target="faq">الأسئلة الشائعة</a>
                 <a onclick="navigateTo('about')" data-target="about">عن نورها</a>
                 <a onclick="navigateTo('volunteer')" data-target="volunteer">التطوع</a>
-                <a onclick="navigateTo('contact')" data-target="contact">تواصل معنا</a>
             </nav>
 
             <div class="mobile-menu-btn" id="mobile-menu-btn">
@@ -1844,59 +1805,7 @@
             </section>
         </div>
 
-        <!-- 9. CONTACT PAGE -->
-        <div id="contact" class="page-view">
-            <section class="section-padding">
-                <div class="container reveal">
-                    <div class="text-center">
-                        <h1 class="section-title">تواصل معنا</h1>
-                        <p class="section-subtitle">نحن هنا لمساعدتك والإجابة على كافة استفساراتك حول نظام إدارة الطاقة الخاص بنا.</p>
-                    </div>
-
-                    <div class="contact-grid mt-5">
-                        <div class="contact-methods">
-                            <a href="https://www.facebook.com/share/1RoQ8r4gHP/" target="_blank" class="contact-card">
-                                <!-- Facebook Icon -->
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                                <div>
-                                    <h4 style="color: var(--white); margin-bottom: 5px;">فيسبوك</h4>
-                                    <p class="text-muted" style="font-size: 0.9rem;">تابع أحدث أخبارنا على صفحتنا</p>
-                                </div>
-                            </a>
-
-                            <a href="https://www.instagram.com/nowarha_1?igsh=Nzk0M2lkbGR2bGN6" target="_blank" class="contact-card">
-                                <!-- Instagram Icon -->
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                                <div>
-                                    <h4 style="color: var(--white); margin-bottom: 5px;">إنستجرام</h4>
-                                    <p class="text-muted" style="font-size: 0.9rem;">شاهد يومياتنا ونصائحنا للتوفير</p>
-                                </div>
-                            </a>
-
-                            <a href="https://www.tiktok.com/@nowarhaa?_r=1&_t=ZS-96cs3Tcj9qz" target="_blank" class="contact-card">
-                                <!-- TikTok Icon -->
-                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-                                <div>
-                                    <h4 style="color: var(--white); margin-bottom: 5px;">تيك توك</h4>
-                                    <p class="text-muted" style="font-size: 0.9rem;">تابع فيديوهاتنا التعليمية للكهرباء</p>
-                                </div>
-                            </a>
-
-                            <a href="mailto:nowarhaa1@gmail.com" class="contact-card">
-                                <!-- Email Icon -->
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                <div>
-                                    <h4 style="color: var(--white); margin-bottom: 5px;">البريد الإلكتروني</h4>
-                                    <p class="text-muted" style="font-size: 0.9rem; direction: ltr; text-align: right;">nowarhaa1@gmail.com</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- 10. VOLUNTEER PAGE -->
+        <!-- 9. VOLUNTEER PAGE -->
         <div id="volunteer" class="page-view">
             <section class="section-padding">
                 <div class="container reveal">
